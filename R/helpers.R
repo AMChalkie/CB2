@@ -84,8 +84,10 @@ run_sgrna_quant <- function(lib_path,
     
     total <- quant_ret$total
     names(total) <- design$sample_name
-    sequence <- data.frame(sgRNA = quant_ret$sgRNA, sequence=quant_ret$sequence)
-    list(count = df_count, total = total, sequence = sequence)
+
+    
+    #sequence <- data.frame(sgRNA = quant_ret$sgRNA, sequence=quant_ret$sequence)
+    list(count = df_count, total = total, quant_ret = quant_ret)
 }
 
 #' A function to perform a statistical test at a sgRNA-level, deprecated.
